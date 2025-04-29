@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>CHILL MOVIE APP</title>
+    <link rel="icon" type="image/x-icon" href="../images/logo-icon.png">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <link rel='stylesheet' type='text/css' media='screen' href='../style/beranda.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <picture>
+                <source 
+                   media="(orientation: landscape)"
+                   srcset="../images/logo.png">
+                <source 
+                   media="(orientation: portrait)"
+                   srcset="../images/logo-icon.png">
+                   
+                <img src="../images/logo.png" style="height: 5vh; width: auto;">
+             </picture>
+             
+            <ul>
+                <li><a href="#">Series</a></li>
+                <li><a href="#">Film</a></li>
+                <li><a href="#">Daftar Saya</a></li>
+            </ul>
+
+            <div class="dropdown">
+                <img src="../images/avatar.png" alt="Avatar" class="avatar">
+                <span class="arrow">▼</span>
+                <div class="dropdown-content">
+                    <a href="#"><i class="fas fa-user"></i> Profil Saya</a>
+                    <a href="#"><i class="fas fa-star"></i> Ubah Premium</a>
+                    <a href="login.html"><i class="fas fa-sign-out-alt"></i> Keluar</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="featured">
+            <div class="featured-content">
+                <div class="featured-text">
+                    <h2 class="ellipsis1">Duty After School</h2>
+                    <p class="ellipsis3">Sebuah benda tak dikenal mengambil alih dunia. Dalam keputusasaan, Departemen Pertahanan mulai merekrut lebih banyak tentara, termasuk siswa sekolah menengah. Mereka pun segera menjadi pejuang garis depan dalam perang.</p>
+                </div>
+
+                <div class="seperate-positioning">
+                    <div class="featured-buttons">
+                        <button style="background-color: #0F1E93; padding: 10px 30px;">Mulai</button>
+                        <button style="background-color: #22282A; width: fit-content;"><div class="circle-warning"><i class="fas fa-exclamation"></i></div>Selengkapnya</button>
+                        <span>18+</span>
+                    </div>
+                    <div class="sound-control">
+                        <button id="volume"><i class="fas fa-volume-up"></i></button>
+                    </div>  
+                </div>
+            </div>   
+        </section>
+        
+
+        <div class="film-display">
+            <section class="continue">
+                <h2>Melanjutkan Tonton Film</h2>
+                <div class="slider-wrapper">
+                    <button class="slide-btn left"><b>&lt;</b></button>
+                    <div class="film-slider">
+                        <div class="film-card-horizontal">
+                            <span class="horizontal-desc-tag">
+                                <p class="hor-ellipsis"><b>Don't Look Up</b></p>
+                                <p class="hor-rating"><i class="fas fa-star"></i>&nbsp;&nbsp;4.5/5</p>
+                            </span>
+                            <img src="../images/film/h0013.png" alt="Film 13">
+                        </div>
+                        <div class="film-card-horizontal">
+                            <span class="horizontal-desc-tag">
+                                <p class="hor-ellipsis"><b>All of Us Are Dead</b></p>
+                                <p class="hor-rating"><i class="fas fa-star"></i>&nbsp;&nbsp;4.2/5</p>
+                            </span>
+                            <img src="../images/film/h0004.png" alt="Film 4">
+                        </div>
+                        <div class="film-card-horizontal">
+                            <span class="horizontal-desc-tag">
+                                <p class="hor-ellipsis"><b>Blue Lock</b></p>
+                                <p class="hor-rating"><i class="fas fa-star"></i>&nbsp;&nbsp;4.6/5</p>
+                            </span>
+                            <img src="../images/film/h0014.png" alt="Film 14">
+                        </div>
+                        <div class="film-card-horizontal">
+                            <span class="horizontal-desc-tag">
+                                <p class="hor-ellipsis"><b>A Man Called Otto</b></p>
+                                <p class="hor-rating"><i class="fas fa-star"></i>&nbsp;&nbsp;4.4/5</p>
+                            </span>
+                            <img src="../images/film/h0009.png" alt="Film 9">
+                        </div>
+                    </div>
+                    <button class="slide-btn right"><b>&gt;</b></button>
+                </div>
+            </section>
+
+            <section class="top-rating" style="margin-top: 50px">
+                <h2>Top Rating Film dan Series Hari Ini</h2>
+                <div class="slider-wrapper">
+                    <button class="slide-btn left"><b>&lt;</b></button>
+                    <div class="film-slider">
+                        <div class="film-card">
+                            <span class="new-episode-tag">Episode Baru</span>
+                            <img src="../images/film/0001.png" alt="Film 1">
+                        </div>
+                        <div class="film-card">
+                            <img src="../images/film/0002.png" alt="Film 2">
+                        </div>
+                        <div class="film-card">
+                            <img src="../images/film/0003.png" alt="Film 3">
+                        </div>
+                        <div class="film-card">
+                            <span class="new-episode-tag">Episode Baru</span>
+                            <img src="../images/film/0004.png" alt="Film 4">
+                        </div>
+                        <div class="film-card">
+                            <img src="../images/film/0005.png" alt="Film 5">
+                        </div>
+    
+                        <div class="film-card">
+                            <img src="../images/film/0006.png" alt="Film 6">
+                        </div>
+                        <div class="film-card">
+                            <img src="../images/film/0007.png" alt="Film 7">
+                        </div>
+                        <div class="film-card">
+                            <img src="../images/film/0008.png" alt="Film 8">
+                        </div>
+                        <div class="film-card">
+                            <img src="../images/film/0009.png" alt="Film 9">
+                        </div>
+                        <div class="film-card">
+                            <img src="../images/film/0010.png" alt="Film 10">
+                        </div>
+                    </div>
+                    <button class="slide-btn right"><b>&gt;</b></button>
+                </div>
+            </section>
+            
+            <section class="trending" style="margin-top: 50px">
+                <h2>Film Trending</h2>
+                <div class="slider-wrapper">
+                    <button class="slide-btn left"><b>&lt;</b></button>
+                    <div class="film-slider">
+                        <div class="film-card">
+                            <span class="top-ten-tag">Top<br>10</span>
+                            <img src="../images/film/0006.png" alt="Film 6">
+                        </div>
+                        <div class="film-card">
+                            <span class="top-ten-tag">Top<br>10</span>
+                            <img src="../images/film/0007.png" alt="Film 7">
+                        </div>
+                        <div class="film-card">
+                            <span class="top-ten-tag">Top<br>10</span>
+                            <img src="../images/film/0008.png" alt="Film 8">
+                        </div>
+                        <div class="film-card">
+                            <span class="top-ten-tag">Top<br>10</span>
+                            <img src="../images/film/0009.png" alt="Film 9">
+                        </div>
+                        <div class="film-card">
+                            <span class="top-ten-tag">Top<br>10</span>
+                            <img src="../images/film/0010.png" alt="Film 10">
+                        </div>
+
+                        <div class="film-card">
+                            <span class="top-ten-tag">Top<br>10</span>
+                            <img src="../images/film/0001.png" alt="Film 1">
+                        </div>
+                        <div class="film-card">
+                            <span class="top-ten-tag">Top<br>10</span>
+                            <img src="../images/film/0002.png" alt="Film 2">
+                        </div>
+                        <div class="film-card">
+                            <span class="top-ten-tag">Top<br>10</span>
+                            <img src="../images/film/0003.png" alt="Film 3">
+                        </div>
+                        <div class="film-card">
+                            <span class="top-ten-tag">Top<br>10</span>
+                            <img src="../images/film/0004.png" alt="Film 4">
+                        </div>
+                        <div class="film-card">
+                            <span class="top-ten-tag">Top<br>10</span>
+                            <img src="../images/film/0005.png" alt="Film 5">
+                        </div>
+                    </div>
+                    <button class="slide-btn right"><b>&gt;</b></button>
+                </div>
+            </section>
+
+            <section class="new-release" style="margin-top: 50px">
+                <h2>Rilis Baru</h2>
+                <div class="slider-wrapper">
+                    <button class="slide-btn left"><b>&lt;</b></button>
+                    <div class="film-slider">
+                        <div class="film-card">
+                            <img src="../images/film/0010.png" alt="Film 10">
+                        </div>
+                        <div class="film-card">
+                            <span class="new-episode-tag">Episode Baru</span>
+                            <img src="../images/film/0011.png" alt="Film 11">
+                        </div>
+                        <div class="film-card">
+                            <img src="../images/film/0005.png" alt="Film 5">
+                        </div>
+                        <div class="film-card">
+                            <span class="new-episode-tag">Episode Baru</span>
+                            <img src="../images/film/0004.png" alt="Film 4">
+                        </div>
+                        <div class="film-card">
+                            <img src="../images/film/0012.png" alt="Film 12">
+                        </div>
+
+                        <div class="film-card">
+                            <img src="../images/film/0001.png" alt="Film 1">
+                        </div>
+                        <div class="film-card">
+                            <img src="../images/film/0002.png" alt="Film 2">
+                        </div>
+                        <div class="film-card">
+                            <img src="../images/film/0003.png" alt="Film 3">
+                        </div>
+                        <div class="film-card">
+                            <img src="../images/film/0006.png" alt="Film 6">
+                        </div>
+                        <div class="film-card">
+                            <img src="../images/film/0007.png" alt="Film 7">
+                        </div>
+                    </div>
+                    <button class="slide-btn right"><b>&gt;</b></button>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+
+    <footer>
+        <div class="TM">
+            <img src="../images/logo.png" style="height: 50px; width: auto;">
+            <p style="color:#C1C2C4">@2023 Chill All Rights Reserved.</p>
+        </div>
+        
+        <div class="genre">
+            <p class="subtitle"><b>Genre</b></p>
+            <div class="option-dropdown">
+                <button class="toggle">
+                    <p>Genre</p>
+                    <p>></p>
+                </button>
+                <div class="option-dropdown-content">
+                    <a href="#">Aksi</a>
+                    <a href="#">Anak-anak</a>
+                    <a href="#">Anime</a>
+                    <a href="#">Britania</a>
+                    <a href="#">Drama</a>
+                    <a href="#">Fantasi Ilmiah & Fantasi</a>
+                    <a href="#">Kejahatan</a>
+                    <a href="#">KDrama</a>
+                    <a href="#">Komedi</a>
+                    <a href="#">Petualangan</a>
+                    <a href="#">Perang</a>
+                    <a href="#">Romantis</a>
+                    <a href="#">Sains & Alam</a>
+                    <a href="#">Thriller</a>
+                </div>
+            </div>
+            <div class="category">
+                <div class="sub-category">
+                    <a href="#">Aksi</a>
+                    <a href="#">Anak-anak</a>
+                    <a href="#">Anime</a>
+                    <a href="#">Britania</a>
+                </div>
+
+                <div class="sub-category">
+                    <a href="#">Drama</a>
+                    <a href="#">Fantasi Ilmiah & Fantasi</a>
+                    <a href="#">Kejahatan</a>
+                    <a href="#">KDrama</a>
+                </div>
+
+                <div class="sub-category">
+                    <a href="#">Komedi</a>
+                    <a href="#">Petualangan</a>
+                    <a href="#">Perang</a>
+                    <a href="#">Romantis</a>
+                </div>
+
+                <div class="sub-category">
+                    <a href="#">Sains & Alam</a>
+                    <a href="#">Thriller</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="genre" style="margin-right: 2%;">
+            <p class="subtitle"><b>Help</b></p>
+            <div class="option-dropdown">
+                <button class="toggle">
+                    <p>Help</p>
+                    <p>></p>
+                </button>
+                <div class="option-dropdown-content">
+                    <a href="#">FAQ</a>
+                    <a href="#">Kontak Kami</a>
+                    <a href="#">Privasi</a>
+                    <a href="#">Syarat & Ketentuan</a>
+                </div>
+            </div>
+            <div class="help-category">
+                <a href="#">FAQ</a>
+                <a href="#">Kontak Kami</a>
+                <a href="#">Privasi</a>
+                <a href="#">Syarat & Ketentuan</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/beranda.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>CHILL MOVIE APP</title>
+    <link rel="icon" type="image/x-icon" href="../images/logo-icon.png">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../style/register.css'>
+</head>
+
+<body>
+    <div class="container">
+        <img src="../images/logo.png" style="width: 50%; height: 50%;">
+        <h3>Daftar</h3>
+        <p>Selamat datang!</p>
+
+        <form id="register-form">
+            <div class="input">
+                <p>Username</p>
+                <input type="text" id="usernameInput" placeholder="Masukkan username" style="margin-bottom: 30px;" required>
+            </div>
+
+            <div class="input">
+                <p>Kata Sandi</p>
+                <input type="password" id="passwordInput" placeholder="Masukkan kata sandi" style="margin-bottom: 30px;" required>
+            </div>
+
+            <div class="input">
+                <p>Konfirmasi Kata Sandi</p>
+                <input type="password" id="confirmPasswordInput" placeholder="Konfirmasi kata sandi" required>
+            </div>
+
+            <div class="details">
+                <p>Sudah punya akun? <a href="login.html">Masuk</a></p>
+            </div>
+            
+            <div class="register">
+                <button type="submit">Daftar</button>
+                <p>Atau</p>
+                <button style="background-color: transparent">
+                    <img src="../images/google-logo.png" style="width: 3%; height: 3%; margin-right: 10px;">
+                    <span style="align-items: center;">Daftar dengan Google</span>
+                </button>
+            </div>
+        </form>
+
+    </div>
+    <script src='../js/register.js'></script>
+</body>
+</html>
