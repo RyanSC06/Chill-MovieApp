@@ -17,6 +17,7 @@ header {
     background-color: #1e1e1e;
     padding: 10px 20px;
     text-align: center;
+    width: 100%;
 }
 
 nav {
@@ -116,7 +117,6 @@ nav a {
 
 
 main {
-    height: 100%;
     width: 100%;
     max-width: 100%;
     margin-top: 0;
@@ -130,8 +130,7 @@ main {
 .featured {
     position: relative;
     height: 60vh;
-
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 20%, rgba(0,0,0,1)), url("../images/film/featured1.png");
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -147,12 +146,17 @@ main {
 }
 
 .featured-text h2 {
-    font-size: 45px;
+    font-size: 40px;
+}
+
+.featured-text p {
+    font-size: 18px;
 }
 
 .featured-text {
     margin-bottom: 20px;
     max-width: 45%;
+    text-align: left;
 }
 
 @media (max-width: 850px) {
@@ -300,6 +304,7 @@ main {
 
 .film-display {
     padding: 2% 5% 2% 5%;
+    text-align: left;
 }
 /* --------------------------------------- */
 .slider-wrapper {
@@ -448,7 +453,7 @@ main {
     justify-content: space-between;
     width: 100%;
     bottom: 3px;
-    font-size: medium;
+    font-size: 10px;
 }
 
 .hor-ellipsis {
@@ -477,6 +482,7 @@ footer {
 
     justify-content: space-between;
     align-items: center;
+    text-align: left;
 }
 
 @media (max-width: 907px) {
@@ -578,13 +584,19 @@ footer {
 }
 /* --------------------------------------- */
 .option-dropdown {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    
-    padding: 20px;
-    right: 20px;
-    justify-content: space-between;       
+    display: none;      
+}
+
+@media (max-width: 907px) {
+    .option-dropdown {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        
+        padding: 20px;
+        right: 20px;
+        justify-content: space-between;
+    }
 }
 
 .option-dropdown-content {
