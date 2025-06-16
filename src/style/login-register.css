@@ -10,10 +10,8 @@ body {
     
     padding: 0;
     margin: 0;
-    height: 100vh;
     box-sizing: border-box;
     
-    background-image: url('../images/seats-background.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -28,7 +26,7 @@ body {
 
 
 .container {
-    max-width: 35%;
+    max-width: 50%;
     font-size: 70%;
 
     background-size: contain;
@@ -42,13 +40,35 @@ body {
     align-items: center;
 
     margin: auto;
-    margin-top: 4.5%;
+    margin-top: 7%;
     padding: 50px;
 }
 
 @media (max-width: 700px) {
     .container {
-        max-width: 70%;
+        max-width: 65%;
+        font-size: 0.6em;
+        padding: 40px;
+    }
+
+    .details a {
+        font-size: 1em;
+    }
+
+    .details p {
+        font-size: 1em;
+    }
+
+    input {
+        font-size: 0.8em;
+    }
+
+    .input {
+        max-width: 90%;
+    }
+
+    .input p {
+        font-size: 0.8em !important;
     }
 }
 
@@ -118,12 +138,12 @@ input::-ms-reveal {
 
 
 
-.register {
+.login {
     display: flex;
     flex-direction: column;
 }
 
-.register p {
+.login p {
     margin-top: 2%;
     margin-bottom: 2%;
 }
