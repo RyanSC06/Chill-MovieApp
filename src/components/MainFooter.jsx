@@ -1,11 +1,9 @@
-import '../style/home.css'
-
 const MainFooter = ({}) => {
     return (
         <>
         <footer>
             <div className="TM">
-                <img src="/src/assets/images/logo.png" style={{height: "50px", width: "auto"}} />
+                <img src="/images/logo.png" style={{height: "50px", width: "auto"}} />
                 <p style={{color: "#C1C2C4"}}>@2023 Chill All Rights Reserved.</p>
             </div>
             

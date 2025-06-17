@@ -12,13 +12,13 @@ function Login() {
     // const [count, setCount] = useState(0)
 
     useEffect(() => {
-        document.body.style.backgroundImage = "url('/src/assets/images/cinema-background.jpeg')"
+        document.body.style.backgroundImage = "url('/images/cinema-background.jpeg')"
     }, []);
 
     return (
       <>
       <div className="container">
-          <WelcomeTitle logoPath="src/assets/images/logo.png" logoStyleDict={{width: '50%', height: '50%'}}
+          <WelcomeTitle logoPath="/images/logo.png" logoStyleDict={{width: '50%', height: '50%'}}
               title="Masuk" subtitle="Selamat datang kembali!"/>
 
           <form id="login-form">

@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import '../style/home.css'
 
 const MainHeader = ({}) => {
     return (
@@ -9,10 +8,10 @@ const MainHeader = ({}) => {
                 <picture>
                     <source 
                     media="(orientation: landscape)"
-                    srcSet="/src/assets/images/logo.png" />
+                    srcSet="/images/logo.png" />
                     <source 
                     media="(orientation: portrait)"
-                    srcSet="/src/assets/images/logo-icon.png" />
+                    srcSet="/images/logo-icon.png" />
                     
                     <img src="../../vanila/images/logo.png" style={{height: "5vh", width: "auto"}} />
                 </picture>
@@ -24,7 +23,7 @@ const MainHeader = ({}) => {
                 </ul>
 
                 <div className="dropdown">
-                    <img src="/src/assets/images/avatar.png" alt="Avatar" className="avatar" />
+                    <img src="/images/avatar.png" alt="Avatar" className="avatar" />
                     <span className="arrow">▼</span>
                     <div className="dropdown-content">
                         <a href="#"><i className="fas fa-user"></i> Profil Saya</a>
