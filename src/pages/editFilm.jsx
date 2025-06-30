@@ -11,7 +11,7 @@ const EditFilm = ({}) => {
     const { continueList, topList, trendingList, newList, 
             addFilm, updateFilm, deleteFilm } = useFilmStore();
 
-    const [selectedFilm, setSelectedFilm] = useState(null)
+    const [isEditing, setIsEditing] = useState(false)
 
     const [filmID, setFilmID] = useState('')
     const [imgPath, setImgPath] = useState('')
@@ -33,9 +33,18 @@ const EditFilm = ({}) => {
             return
         }
 
-        if (selectedFilm !== null) {
-            updateFilm(selectedFilm.filmID, selectedFilm, targetList)
-            setSelectedFilm(null)
+        if (isEditing) {
+            updateFilm(filmID, {
+                filmID       : filmID,
+                imgPath      : imgPath, 
+                alt          : alt,
+                title        : title,
+                rating       : rating,
+                isNewEpisode : isNewEpisode,
+                isTopTen     : isTopTen,
+                isPremium    : isPremium
+            }, targetList)
+            setIsEditing(false)
         } else {
             addFilm ({
                 filmID       : filmID,
@@ -66,12 +75,12 @@ const EditFilm = ({}) => {
         setAlt          (film.alt)
         setTitle        (film.title)
         setRating       (film.rating)
-        setIsNewEpisode (film.isNewEpisode ? "true" : "false")
-        setIsTopTen     (film.isTopTen     ? "true" : "false")
-        setIsPremium    (film.isPremium    ? "true" : "false")
+        setIsNewEpisode (film.isNewEpisode ? true : false)
+        setIsTopTen     (film.isTopTen     ? true : false)
+        setIsPremium    (film.isPremium    ? true : false)
         setTargetList   (film.parentListId)
-        
-        setSelectedFilm (film)
+
+        setIsEditing    (true)
     }
 
     const handleDelete = (film) => {
@@ -126,9 +135,8 @@ const EditFilm = ({}) => {
                     <input
                         type     = "radio"
                         name     = "isNewEpisode"
-                        value    = "true"
-                        checked  = {isNewEpisode === 'true'}
-                        onChange = {(e) => setIsNewEpisode(true)}
+                        checked  = {isNewEpisode === true}
+                        onChange = {() => setIsNewEpisode(true)}
                     />
                     True
                 </label>
@@ -137,9 +145,8 @@ const EditFilm = ({}) => {
                     <input
                         type     = "radio"
                         name     = "isNewEpisode"
-                        value    = "false"
-                        checked  = {isNewEpisode === 'false'}
-                        onChange = {(e) => setIsNewEpisode(false)}
+                        checked  = {isNewEpisode === false}
+                        onChange = {() => setIsNewEpisode(false)}
                     />
                     False
                 </label>
@@ -151,9 +158,8 @@ const EditFilm = ({}) => {
                     <input
                         type     = "radio"
                         name     = "isTopTen"
-                        value    = "true"
-                        checked  = {isTopTen === 'true'}
-                        onChange = {(e) => setIsTopTen(true)}
+                        checked  = {isTopTen === true}
+                        onChange = {() => setIsTopTen(true)}
                     />
                     True
                 </label>
@@ -162,9 +168,8 @@ const EditFilm = ({}) => {
                     <input
                         type     = "radio"
                         name     = "isTopTen"
-                        value    = "false"
-                        checked  = {isTopTen === 'false'}
-                        onChange = {(e) => setIsTopTen(false)}
+                        checked  = {isTopTen === false}
+                        onChange = {() => setIsTopTen(false)}
                     />
                     False
                 </label>
@@ -176,9 +181,8 @@ const EditFilm = ({}) => {
                     <input
                         type     = "radio"
                         name     = "isPremium"
-                        value    = "true"
-                        checked  = {isPremium === 'true'}
-                        onChange = {(e) => setIsPremium(true)}
+                        checked  = {isPremium === true}
+                        onChange = {() => setIsPremium(true)}
                     />
                     True
                 </label>
@@ -187,9 +191,8 @@ const EditFilm = ({}) => {
                     <input
                         type     = "radio"
                         name     = "isPremium"
-                        value    = "false"
-                        checked  = {isPremium === 'false'}
-                        onChange = {(e) => setIsPremium(false)}
+                        checked  = {isPremium === false}
+                        onChange = {() => setIsPremium(false)}
                     />
                     False
                 </label>
@@ -199,7 +202,7 @@ const EditFilm = ({}) => {
             <button 
                 onClick={handleSubmit} 
                 style={{color:"white", marginTop: "10px", width: "70%", height:"50px", padding: "0", marginBottom: "40px"}}>
-                    {selectedFilm ? 'Update' : 'Add'}
+                    {isEditing ? 'Update' : 'Add'}
             </button>
 
 
