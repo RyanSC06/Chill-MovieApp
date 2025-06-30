@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import { continueFilmList, topFilmList, trendingFilmList, newFilmList } from '../constants'
 
 import '../style/home.css'
 
@@ -8,7 +7,11 @@ import MainFooter from '../components/MainFooter'
 import FilmSection from '../components/FilmSection'
 import FeatureSection from '../components/FeatureSection'
 
+import useFilmStore from '../store/FilmStore'
+
 const Home = ({}) => {
+    const { continueList, topList, trendingList, newList } = useFilmStore();
+
     useEffect(() => {
         document.getElementById('root').style.width = "100%"
     }, [])
@@ -28,25 +31,25 @@ const Home = ({}) => {
             <div className="film-display">
                 <FilmSection 
                     sectionName  = {"Melanjutkan Tonton Film"} 
-                    filmList     = {continueFilmList}
+                    filmList     = {continueList}
                     isHorizontal = {true}
                 />
                 
                 <FilmSection 
                     sectionName  = {"Top Rating Film dan Series Hari Ini"} 
-                    filmList     = {topFilmList}
+                    filmList     = {topList}
                     isHorizontal = {false}
                 />
                 
                 <FilmSection 
                     sectionName  = {"Film Trending"} 
-                    filmList     = {trendingFilmList}
+                    filmList     = {trendingList}
                     isHorizontal = {false}
                 />
 
                 <FilmSection 
                     sectionName  = {"Rilis Baru"} 
-                    filmList     = {newFilmList}
+                    filmList     = {newList}
                     isHorizontal = {false}
                 />
             </div>
