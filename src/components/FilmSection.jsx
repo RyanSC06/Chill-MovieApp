@@ -34,13 +34,13 @@ const FilmSection = ({sectionName, filmList, isHorizontal=false}) => {
 
     const scrollLeft = () => {
         if (sliderRef.current) {
-            sliderRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+            sliderRef.current.scrollBy({ left: -500, behavior: 'smooth' });
         }
     };
 
     const scrollRight = () => {
         if (sliderRef.current) {
-            sliderRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+            sliderRef.current.scrollBy({ left: 500, behavior: 'smooth' });
         }
     };
     

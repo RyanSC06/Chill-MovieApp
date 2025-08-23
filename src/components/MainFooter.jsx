@@ -3,8 +3,8 @@ const MainFooter = ({}) => {
         <>
         <footer>
             <div className="TM">
-                <img src="/images/logo.png" style={{height: "50px", width: "auto"}} />
-                <p style={{color: "#C1C2C4"}}>@2023 Chill All Rights Reserved.</p>
+                <img src="/images/logo.png"/>
+                <p>@2023 Chill All Rights Reserved.</p>
             </div>
             
             <div className="genre">

@@ -1,12 +1,6 @@
-const form = document.getElementById('register-form');
+import { getValidIdentity } from '../js/identity.js';
 
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const username = form.usernameInput.value;
-    const password = form.passwordInput.value;
-    const passwordConfirm = form.confirmPasswordInput.value;
-
+export function checkRegister(username, password, passwordConfirm) {
     if (password == passwordConfirm) {
         let validIdentity = getValidIdentity();
 
@@ -19,23 +13,9 @@ form.addEventListener('submit', function(e) {
 
         validIdentity.push({username: username, password: password});
         localStorage.setItem('valid', JSON.stringify(validIdentity));
-
-        window.location.href = '../html/beranda.html?register=success'
+        return true;
     } else {
         alert('Konfirmasi password salah!');
+        return false;
     }
-});
-
-
-function getValidIdentity() {
-    let validIdentity = localStorage.getItem('valid');
-
-    try {
-        validIdentity = JSON.parse(validIdentity) || [];
-    } catch (error) {
-        console.log(error);
-        validIdentity = [];
-    }
-
-    return (validIdentity);
 }

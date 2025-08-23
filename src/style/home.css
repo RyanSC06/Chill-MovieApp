@@ -8,6 +8,10 @@ body {
     color: white;
 }
 
+#root {
+    width: 100%;
+}
+
 
 
 
@@ -282,12 +286,13 @@ main {
 .sound-control {
     position: absolute;
     width: fit-content;
-    right: 1.5vw;
+    right: 3vw;
 }
 
-.sound-control button {
+.sound-control i {
     background-color: transparent;
     border: 1px solid;
+    border-radius: 50%;
     border-color: #C1C2C4;
     padding: 10px 10px;
 }
@@ -633,4 +638,17 @@ footer {
     display: block;
     position: absolute;
     right: 0;
+}
+
+
+
+.TM img {
+    height: 50px;
+    width: "auto";
+}
+
+.TM p {
+    color: #C1C2C4;
+    margin-top: 10%;
+    font-size: 20px;
 }

@@ -1,10 +1,17 @@
-const TextInput = ({description, id, type, placeholder, styleDict=null}) => {
+const TextInput = ({description, id, type, placeholder, styleDict=null, value, onChange}) => {
     return (
         <>
         <div className="input">
             <p>{description}</p>
-            <input type={type} id={id} placeholder={placeholder} 
-                style={styleDict === null ? {} : styleDict} required />
+            <input
+                required
+                type        = {type}
+                id          = {id}
+                placeholder = {placeholder}
+                style       = {styleDict || {}}
+                value       = {value}
+                onChange    = {onChange}
+            />
         </div>
         </>
     )

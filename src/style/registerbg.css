@@ -1,0 +1,14 @@
+.register-background {
+    background-image: url('/images/seats-background.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+
+    min-height: 100vh;      
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

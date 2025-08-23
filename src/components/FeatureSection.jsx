@@ -1,4 +1,12 @@
+import { useState } from "react"
+
 const FeatureSection = ({imgPath, title, description, minAge}) => {
+    const [muted, setMuted] = useState(false);
+
+    const toggleMute = () => {
+        setMuted(!muted);
+    }
+
     return (
         <>
         <section className="featured" style = {{
@@ -16,8 +24,8 @@ const FeatureSection = ({imgPath, title, description, minAge}) => {
                         <button style={{backgroundColor: "#22282A", width: "fit-content"}}><div className="circle-warning"><i className="fas fa-exclamation"></i></div>Selengkapnya</button>
                         <span>{minAge}+</span>
                     </div>
-                    <div className="sound-control">
-                        <button id="volume"><i className="fas fa-volume-up"></i></button>
+                    <div className="sound-control" onClick={toggleMute} style={{cursor: "pointer"}}>
+                        <i id="volume" className={`fa ${muted ? "fa-volume-mute" : "fa-volume-up"}`} />
                     </div>  
                 </div>
             </div>   

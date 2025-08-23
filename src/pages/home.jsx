@@ -1,4 +1,5 @@
-import { useEffect } from 'react'
+import { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import '../style/home.css'
 
@@ -12,10 +13,24 @@ import useFilmStore from '../store/FilmStore'
 const Home = ({}) => {
     const { continueList, topList, trendingList, newList } = useFilmStore();
 
-    useEffect(() => {
-        document.getElementById('root').style.width = "100%"
-    }, [])
+    const location = useLocation();
+    const navigate = useNavigate();
 
+    useEffect(() => {
+        const params = new URLSearchParams(location.search);
+
+        if (params.get("register") === "success") {
+            alert("Registrasi berhasil!");
+            navigate("/home", { replace: true }); 
+        }
+
+        if (params.get("login") === "success") {
+            alert("Selamat datang kembali!");
+            navigate("/home", { replace: true });
+        }
+    }, [location, navigate]);
+
+    
     return (
         <>
         <MainHeader />
