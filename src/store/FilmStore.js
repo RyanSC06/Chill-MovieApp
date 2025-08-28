@@ -5,10 +5,10 @@ import { continueFilmList, topFilmList, trendingFilmList, newFilmList } from '..
 
 const useFilmStore = create ( 
     persist ((set, get) => ({
-        continueList: continueFilmList,
-        topList: topFilmList,
-        trendingList: trendingFilmList,
-        newList: newFilmList,
+        continueList : continueFilmList,
+        topList      : topFilmList,
+        trendingList : trendingFilmList,
+        newList      : newFilmList,
 
         // ADD
         addFilm: (film, list) =>

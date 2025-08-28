@@ -3,7 +3,7 @@ const MainFooter = ({}) => {
         <>
         <footer>
             <div className="TM">
-                <img src="/images/logo.png"/>
+                <img src="/images/logo-background/logo.png"/>
                 <p>@2023 Chill All Rights Reserved.</p>
             </div>
             

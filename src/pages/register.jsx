@@ -30,7 +30,7 @@ function Register() {
         <>
         <div className="register-background">
             <div className="container">
-                <WelcomeTitle logoPath="/images/logo.png" logoStyleDict={{width: '50%', height: '50%'}}
+                <WelcomeTitle logoPath="/images/logo-background/logo.png" logoStyleDict={{width: '50%', height: '50%'}}
                     title="Daftar" subtitle="Selamat datang!"/>
 
                 <form id="register-form" onSubmit={handleRegister}>

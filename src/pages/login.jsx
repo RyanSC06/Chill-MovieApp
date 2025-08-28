@@ -31,7 +31,7 @@ function Login() {
         <>
         <div className='login-background'>
             <div className="container">
-                <WelcomeTitle logoPath="/images/logo.png" logoStyleDict={{width: '50%', height: '50%'}}
+                <WelcomeTitle logoPath="/images/logo-background/logo.png" logoStyleDict={{width: '50%', height: '50%'}}
                     title="Masuk" subtitle="Selamat datang kembali!"/>
 
                 <form id="login-form" onSubmit={handleLogin}>

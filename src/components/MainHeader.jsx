@@ -8,12 +8,12 @@ const MainHeader = ({}) => {
                 <picture>
                     <source 
                     media="(orientation: landscape)"
-                    srcSet="/images/logo.png" />
+                    srcSet="/images/logo-background/logo.png" />
                     <source 
                     media="(orientation: portrait)"
-                    srcSet="/images/logo-icon.png" />
+                    srcSet="/images/logo-background/logo-icon.png" />
                     
-                    <img src="../../vanila/images/logo.png" style={{height: "5vh", width: "auto"}} />
+                    <img src="/images/logo-background/logo.png" style={{height: "5vh", width: "auto"}} />
                 </picture>
                 
                 <ul>
@@ -23,7 +23,7 @@ const MainHeader = ({}) => {
                 </ul>
 
                 <div className="dropdown">
-                    <img src="/images/avatar.png" alt="Avatar" className="avatar" />
+                    <img src="/images/avatar/avatar1.png" alt="Avatar" className="avatar" />
                     <span className="arrow">▼</span>
                     <div className="dropdown-content">
                         <a href="#"><i className="fas fa-user"></i> Profil Saya</a>

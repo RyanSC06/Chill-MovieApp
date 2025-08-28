@@ -30,7 +30,16 @@ const Home = ({}) => {
         }
     }, [location, navigate]);
 
-    
+    // const { lists, loading } = useFilmsLists("1");
+    // if (loading) {
+    //     return <div>Loading...</div>;
+    // }
+
+    // const continueList = lists?.continueList || [];
+    // const topList      = lists?.topList || [];
+    // const trendingList = lists?.trendingList || [];
+    // const newList      = lists?.newList || [];
+
     return (
         <>
         <MainHeader />
