@@ -8,7 +8,9 @@ const FilmCardHorizontal = ({filmListElementHorizontal}) => {
                     &nbsp;&nbsp;{filmListElementHorizontal.rating.toString()}/5
                 </p>
             </span>
-            <img src={filmListElementHorizontal.imgPath} alt={filmListElementHorizontal.alt} />
+            { filmListElementHorizontal.hImgPath 
+                ? <img src={filmListElementHorizontal.hImgPath} alt={filmListElementHorizontal.alt} />
+                : <img src={filmListElementHorizontal.imgPath} alt={filmListElementHorizontal.alt} />}
         </div>
         </>
     )

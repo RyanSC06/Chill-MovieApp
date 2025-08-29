@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 import EditFilmCard from '../components/EditFilmCard';
 import { useFilms } from '../hooks/useFilms';
@@ -12,17 +12,32 @@ const EditFilm = ({}) => {
     // FORM TO EDIT/ADD
     // 1. Preparations
     const targetRef = useRef(null);
-    const backRef = useRef(null);
+    const backRef = useRef({});
+    const listRef = useRef(null)
+    const [isFirstLoad, setIsFirstLoad] = useState(true);
+
     const handleScroll = () => {
         targetRef.current?.scrollIntoView({ behavior: 'smooth' });
     };
-    const handleScrollBack = (liElement) => {
-        backRef.current = liElement;
-        backRef.current?.scrollIntoView({ behavior: 'smooth' });
-    }
+    const handleScrollBack = (filmID) => {
+        const target = backRef.current[filmID];
+        if (target) {
+            console.log("Scrolling to:", filmID, target);
+            target.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+    };
+    useEffect(() => {
+        if (!isFirstLoad) {
+            listRef.current?.scrollIntoView({
+            behavior: "smooth",
+            block: "end"});
+        }
+    }, [films]);
+
     const [isEditing, setIsEditing] = useState(false)
 
     // 2. Fields
+    const [id, setID] = useState(null)
     const [filmID, setfilmID] = useState('')
     const [imgPath, setImgPath] = useState('')
     const [hImgPath, setHImgPath] = useState('')
@@ -43,6 +58,7 @@ const EditFilm = ({}) => {
 
     // FORM HANDLERS
     const reset = () => {
+        setID             (null)
         setfilmID         ('')
         setImgPath        ('')
         setHImgPath       ('')
@@ -72,7 +88,7 @@ const EditFilm = ({}) => {
         }
 
         if (isEditing) {
-            updateFilm(filmID, {
+            updateFilm(id, {
                 filmID         : filmID,
                 imgPath        : imgPath, 
                 hImgPath       : hImgPath,
@@ -88,9 +104,12 @@ const EditFilm = ({}) => {
                 isTopList      : isTopList,
             })
             setIsEditing(false)
-            handleScrollBack(backRef.current)
+            setTimeout(() => {
+                handleScrollBack(filmID)
+            }, 0)
 
         } else {
+            setIsFirstLoad(false);
             createFilm ({
                 filmID         : filmID,
                 imgPath        : imgPath, 
@@ -112,6 +131,7 @@ const EditFilm = ({}) => {
     }
 
     const handleEdit = (film) => {
+        setID             (film.id)
         setfilmID         (film.filmID)
         setImgPath        (film.imgPath)
         setHImgPath       (film.hImgPath)
@@ -354,14 +374,16 @@ const EditFilm = ({}) => {
             </div>
 
 
-            <ul id="filmList" style={{marginTop: "70px"}}>
+            <ul id="filmList" style={{marginTop: "70px"}} ref={listRef}>
                 { loading ? <p style={{marginTop: "40px"}}>Loading...</p> :
                     films.map((film) => (
                         <EditFilmCard 
                             key       = {film.filmID}
                             film      = {film}
                             h         = {film.imgPath!=="" ? false : true}
-                            ref       = {backRef}
+                            ref       = {(el) => {
+                                backRef.current[film.filmID] = el;
+                            }}
                             onEdit    = {(film) => {
                                 handleEdit(film);
                             }} 

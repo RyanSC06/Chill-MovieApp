@@ -9,19 +9,31 @@ import TextInput from '../components/TextInput.jsx'
 import WelcomeTitle from '../components/WelcomeTitle.jsx';
 import AuthButtons from '../components/AuthButtons.jsx'
 
+import { useUsers } from '../hooks/useUsers';
 import { checkRegister } from '../js/register.js';
+import { setToken } from '../services/auth/authService.js';
 
 function Register() {
+    const {users, createUser} = useUsers();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirm, setConfirmPassword] = useState("");
 
     const navigate = useNavigate();
 
-    const handleRegister = (e) => {
+    const handleRegister = async (e) => {
         e.preventDefault();
-        const identityValid = checkRegister(username, password, passwordConfirm);
-        if (identityValid) {    
+
+        const identityValid = await checkRegister(
+            users, username, password, passwordConfirm, createUser);
+
+        if (identityValid) {
+            setToken(JSON.stringify({
+                username: username,
+                password: password,
+                token: username + Date.now().toString(),
+                userID: identityValid
+            }));
             navigate("/home?register=success");
         }
     }

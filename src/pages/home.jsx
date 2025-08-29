@@ -8,10 +8,15 @@ import MainFooter from '../components/MainFooter'
 import FilmSection from '../components/FilmSection'
 import FeatureSection from '../components/FeatureSection'
 
-import useFilmStore from '../store/FilmStore'
+// import useFilmStore from '../store/FilmStore'
+import { useFilmsLists } from "../hooks/useFilmsLists";
+
+const shuffleList = (list) => {
+    return list.sort(() => Math.random() - 0.5)
+}
 
 const Home = ({}) => {
-    const { continueList, topList, trendingList, newList } = useFilmStore();
+    // const { continueList, topList, trendingList, newList } = useFilmStore();
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -30,15 +35,15 @@ const Home = ({}) => {
         }
     }, [location, navigate]);
 
-    // const { lists, loading } = useFilmsLists("1");
-    // if (loading) {
-    //     return <div>Loading...</div>;
-    // }
-
-    // const continueList = lists?.continueList || [];
-    // const topList      = lists?.topList || [];
-    // const trendingList = lists?.trendingList || [];
-    // const newList      = lists?.newList || [];
+    const { lists, loading } = useFilmsLists (
+        JSON.parse(localStorage.getItem("token")).userID);
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+    const continueList = shuffleList(lists?.continueList) || [];
+    const topList      = shuffleList(lists?.topList) || [];
+    const trendingList = shuffleList(lists?.trendingList) || [];
+    const newList      = shuffleList(lists?.newList) || [];
 
     return (
         <>

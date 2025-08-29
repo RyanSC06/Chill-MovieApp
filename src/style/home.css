@@ -427,7 +427,6 @@ main {
 .new-episode-tag {
     position: absolute;
     padding: 5px 10px;
-    margin: 12px 0 0 12px;
     z-index: 50;
 
     background-color: #0F1E93;
@@ -437,6 +436,33 @@ main {
     border-radius: 24px;   
 
     font-size: 0.8em;
+}
+
+.premium-tag {
+    position: absolute;
+    padding: 5px 10px;
+    z-index: 50;
+
+    background-color: #B7A207;
+    color: white;
+
+    border-style: none;
+    border-radius: 24px;   
+
+    font-size: 0.8em;
+}
+
+.upper-tag {
+    margin: 12px 0 0 12px;
+}
+
+.lower-tag {
+    margin: 40px 0 0 12px;
+}
+
+.tags-wrapper {
+    display: flex;
+    flex-direction: column;
 }
 
 .top-ten-tag {

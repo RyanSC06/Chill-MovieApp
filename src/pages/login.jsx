@@ -9,17 +9,27 @@ import TextInput from '../components/TextInput.jsx'
 import WelcomeTitle from '../components/WelcomeTitle.jsx'
 import AuthButtons from '../components/AuthButtons.jsx'
 
+import { useUsers } from '../hooks/useUsers';
 import { checkLogin } from '../js/login.js';
+import { setToken } from '../services/auth/authService.js';
 
 function Login() {
+    const {users} = useUsers();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault();
-        const identityValid = checkLogin(username, password);
+
+        const identityValid = checkLogin(users, username, password);
         if (identityValid) {    
+            setToken(JSON.stringify({
+                username: username,
+                password: password,
+                token: username + Date.now().toString(),
+                userID: identityValid
+            }));
             navigate("/home?login=success");
         }
         else {

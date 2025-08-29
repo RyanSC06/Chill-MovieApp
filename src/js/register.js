@@ -1,21 +1,22 @@
-import { getValidIdentity } from '../js/identity.js';
-
-export function checkRegister(username, password, passwordConfirm) {
+export async function checkRegister(users, username, password, passwordConfirm, createUser) {
     if (password == passwordConfirm) {
-        let validIdentity = getValidIdentity();
-
-        for (const identity of validIdentity) {
-            if (identity.username == username) {
-                alert('Username sudah terpakai!');
-                return;
-            }
+        if (users.some((user) => user.username === username)) {
+            alert('Username sudah terpakai!');
+            return;
         };
 
-        validIdentity.push({username: username, password: password});
-        localStorage.setItem('valid', JSON.stringify(validIdentity));
-        return true;
+        const newUser = await createUser({
+            name         : username,
+            avatar       : "/images/avatar/avatar1.png",
+            username     : username, 
+            password     : password,
+            subscription : "Regular",
+            continueList : [],
+            email        : "",
+        });
+        return newUser.id;
     } else {
         alert('Konfirmasi password salah!');
-        return false;
+        return null;
     }
 }

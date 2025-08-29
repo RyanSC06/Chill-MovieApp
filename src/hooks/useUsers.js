@@ -18,8 +18,9 @@ export const useUsers = () => {
 
     const createUser = async (newUser) => {
         try {
-            await api.post("/users", newUser);
+            const res = await api.post("/users", newUser);
             await fetchUsers();
+            return (res.data);
         } catch (err) {
             console.error("Failed to create user:", err);
         }

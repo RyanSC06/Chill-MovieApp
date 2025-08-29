@@ -1,4 +1,6 @@
-const EditFilmCard = ({film, h, ref, onEdit, onDelete, onScroll}) => {
+import { forwardRef } from "react";
+
+const EditFilmCard = forwardRef(({film, h, onEdit, onDelete, onScroll}, ref) => {
     return (
         <>
         <li key={film.filmID} ref={ref}
@@ -20,6 +22,6 @@ const EditFilmCard = ({film, h, ref, onEdit, onDelete, onScroll}) => {
         </li>
         </>
     )
-}
+})
 
 export default EditFilmCard

@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom'
+import { removeToken } from '../services/auth/authService'
 
 const MainHeader = ({}) => {
+    const userID = JSON.parse(localStorage.getItem("token")).userID;
+
     return (
         <>
         <header>
@@ -23,12 +26,20 @@ const MainHeader = ({}) => {
                 </ul>
 
                 <div className="dropdown">
-                    <img src="/images/avatar/avatar1.png" alt="Avatar" className="avatar" />
+                    <img 
+                        src={`/images/avatar/avatar${userID}.png`} 
+                        alt="Avatar"
+                        className="avatar"
+                        onError={(e) => { 
+                            e.target.onerror = null;
+                            e.target.src = "/images/avatar/avatar1.png"; 
+                        }} 
+                    />
                     <span className="arrow">▼</span>
                     <div className="dropdown-content">
                         <a href="#"><i className="fas fa-user"></i> Profil Saya</a>
                         <a href="#"><i className="fas fa-star"></i> Ubah Premium</a>
-                        <Link to="/"><i className="fas fa-sign-out-alt"></i> Keluar</Link>
+                        <Link onClick={removeToken} to="/"><i className="fas fa-sign-out-alt"></i> Keluar</Link>
                     </div>
                 </div>
             </nav>

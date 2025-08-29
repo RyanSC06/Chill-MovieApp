@@ -16,7 +16,7 @@ export const useFilmsLists = (id) => {
     useEffect(() => {
         try {
             setLists({
-                continueList : user ? films.filter(m => user.continueList.includes(m.id)) : [],
+                continueList : user ? films.filter(m => user.continueList.includes(m.filmID)) : [],
                 topList      : films.filter(m => m.isTopList),
                 trendingList : films.filter(m => m.isTrendingList),
                 newList      : films.filter(m => m.isNewList),
